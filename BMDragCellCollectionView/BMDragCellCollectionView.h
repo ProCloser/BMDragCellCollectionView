@@ -69,6 +69,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 
+- (void)drageCellDidMoveFrom:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath;
+
 /**
  将要开始拖拽时，询问此位置的Cell是否可以拖拽
  Will begin to drag and drop, asking whether the location of the Cell can drag and drop

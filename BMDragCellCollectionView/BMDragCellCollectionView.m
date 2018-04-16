@@ -244,7 +244,9 @@ typedef NS_ENUM(NSUInteger, BMDragCellCollectionViewScrollDirection) {
         [orignalSection removeObject:orignalSection[_oldIndexPath.item]];
     }
     // ==========处理数据
-
+    if ([self.delegate respondsToSelector:@selector(drageCellDidMoveFrom:toIndexPath:)]) {
+        [self.delegate drageCellDidMoveFrom:_oldIndexPath toIndexPath:_currentIndexPath];
+    }
     // 更新外面的数据源
     [self.delegate dragCellCollectionView:self newDataArrayAfterMove:array];
 }
